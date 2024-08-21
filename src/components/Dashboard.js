@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Category from './Category';
 import AddWidget from './AddWidget';
@@ -13,7 +14,7 @@ const initialData = {
       ],
     },
     {
-      name: "Security Dashboard",
+      name: "CWPP Dashboard",
       widgets: [
         { id: 3, name: "Widget 3", text: "Random text for Widget 3" },
       ],
@@ -24,7 +25,7 @@ const initialData = {
 const Dashboard = () => {
   const [categories, setCategories] = useState(initialData.categories);
   const [isAddWidgetOpen, setIsAddWidgetOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState("");
 
   const addWidget = (categoryName, widget) => {
@@ -45,12 +46,11 @@ const Dashboard = () => {
     }));
   };
 
-  const openAddWidgetModal = (category) => {
-    setSelectedCategory(category);
+  const openAddWidgetModal = () => {
+    setSelectedCategory(''); 
     setIsAddWidgetOpen(true);
   };
 
- 
   const filteredCategories = categories.map((category) => {
     return {
       ...category,
@@ -62,23 +62,44 @@ const Dashboard = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-center mb-6">Dashboard</h1>
-      
+      <div className="flex items-center justify-between mb-5">
+        <h1 className="text-3xl font-bold">Dashboard</h1>
+        
+        <div className="flex items-center space-x-3">
+       
+          <button
+            className="mt-3 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700"
+            onClick={openAddWidgetModal}
+          >
+            + Add Widget
+          </button>
 
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+   
+          <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
+      
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/000000/menu-vertical.png"
+            alt="menu"
+            className="cursor-pointer"
+          />
+        </div>
+      </div>
+
 
       {filteredCategories.map(category => (
         <Category 
           key={category.name} 
           category={category} 
           onRemoveWidget={removeWidget} 
-          onAddWidget={() => openAddWidgetModal(category.name)} 
+          onAddWidget={() => setSelectedCategory(category.name)} 
         />
       ))}
 
       {isAddWidgetOpen && (
         <AddWidget 
-          category={selectedCategory} 
+          categories={categories.map(cat => cat.name)} 
+          selectedCategory={selectedCategory}
           onAddWidget={addWidget} 
           onClose={() => setIsAddWidgetOpen(false)} 
         />
