@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Widget = ({ widget, category, onRemoveWidget }) => {
   return (
     <div className="px-6 py-4">
