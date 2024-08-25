@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Category from './Category';
 import AddWidget from './AddWidget';
@@ -46,8 +45,8 @@ const Dashboard = () => {
     }));
   };
 
-  const openAddWidgetModal = () => {
-    setSelectedCategory(''); 
+  const openAddWidgetModal = (categoryName) => {
+    setSelectedCategory(categoryName); 
     setIsAddWidgetOpen(true);
   };
 
@@ -66,18 +65,15 @@ const Dashboard = () => {
         <h1 className="text-3xl font-bold">Dashboard</h1>
         
         <div className="flex items-center space-x-3">
-       
           <button
             className="mt-3 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700"
-            onClick={openAddWidgetModal}
+            onClick={() => openAddWidgetModal('')}  // Opens the modal to choose the category
           >
             + Add Widget
           </button>
 
-   
           <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-      
           <img
             src="https://img.icons8.com/ios-glyphs/30/000000/menu-vertical.png"
             alt="menu"
@@ -86,13 +82,12 @@ const Dashboard = () => {
         </div>
       </div>
 
-
       {filteredCategories.map(category => (
         <Category 
           key={category.name} 
           category={category} 
           onRemoveWidget={removeWidget} 
-          onAddWidget={() => setSelectedCategory(category.name)} 
+          onAddWidget={openAddWidgetModal} 
         />
       ))}
 
