@@ -1,3 +1,31 @@
+# DashBoard assesement
+
+## Description
+This project is a web-based dashboard that allows users to manage widgets within different categories (CSPM Executive Dashboard, CWPP Dashboard). Users can add, remove, and search widgets as needed.
+
+## Features
+- Add widgets to specific dashboards.
+- Remove widgets from dashboards.
+- Search through widgets by name.
+- Responsive and user-friendly interface.
+
+
+
+
+## Installation and Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
