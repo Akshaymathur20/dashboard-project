@@ -9,14 +9,24 @@ This project is a web-based dashboard that allows users to manage widgets within
 - Search through widgets by name.
 - Responsive and user-friendly interface.
 
+# Images
+
+when we open the project for example of two widget in the CSPM Dashbaord added by defaul and in CWPP one widget added default
+![Screenshot 2024-08-26 034942](https://github.com/user-attachments/assets/7bbc181d-fff8-4589-b076-95a581097310)
 
 
+Now when we click on the addwidget  it will give us category from where we have to add the new widget
+![Screenshot 2024-08-26 035014](https://github.com/user-attachments/assets/77f7645d-34dd-4862-89d7-a0d1f0031742)
 
-## Installation and Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+Now Let's I choose the CWPP dashboard and named the new widget "widget 4" and some text to add in it
+![Screenshot 2024-08-26 035107](https://github.com/user-attachments/assets/03cf233a-4500-4a91-a189-e449f1862cfa)
+
+after add widget button the new widget in added in the CWPP dashboard
+![Screenshot 2024-08-26 035132](https://github.com/user-attachments/assets/59ea1640-cee7-48ea-9af5-2adf17c7261f)
+
+We can remove the widget by clicking on the arrow button Ex: In below by cliking on the widget2 cross we removed it from the dashboard
+![Screenshot 2024-08-26 040656](https://github.com/user-attachments/assets/ebe9fcae-867e-49df-a468-02e125406e70)
+
 
 
 
